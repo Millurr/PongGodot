@@ -1,6 +1,5 @@
 extends RigidBody2D
 
-
 var dir = 1
 
 
