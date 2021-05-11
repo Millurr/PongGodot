@@ -1,23 +1,27 @@
-extends Area2D
+extends KinematicBody2D
 
 class_name Player
 
 export(int) var SPEED = 200
+export(int) var ACCEL = 20
+
+var playerName = "PlayerOne"
 
 onready var max_height = get_viewport().size.y
 onready var player_height = $ColorRect.get_rect().size.y
 
-func _process(delta):
+var velocity : Vector2 = Vector2.ZERO
+
+func _physics_process(delta):
+	
 	var input = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
-	position.y = clamp(position.y, 0, max_height-player_height)
-	position.y += input * SPEED * delta
+	
+	if input == 0:
+		velocity = Vector2.ZERO
+	else:
+		_move(input)
 
-
-func _on_Player_body_entered(body):
-	print(body)
-	pass # Replace with function body.
-
-
-func _on_Player_area_entered(area):
-	print(area)
-	pass # Replace with function body.
+func _move(input):
+	velocity.y += input * 20
+	velocity.y = clamp(velocity.y, -SPEED, SPEED)
+	move_and_slide(velocity)
