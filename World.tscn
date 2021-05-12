@@ -25,6 +25,8 @@ position = Vector2( 968, 287 )
 SPEED = 400
 PLAYERONE = false
 PongColor = Color( 0.286275, 0.396078, 1, 1 )
+Bot = true
+BOT_DIFFICULTY = 1.0
 
 [node name="Ball" parent="." instance=ExtResource( 2 )]
 position = Vector2( 500, 320 )
