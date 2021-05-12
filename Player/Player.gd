@@ -5,6 +5,7 @@ class_name Player
 export(int) var SPEED = 200
 export(int) var ACCEL = 20
 export(bool) var PLAYERONE = true
+export(Color) var PongColor
 
 onready var screen = get_viewport_rect().size
 
@@ -13,7 +14,11 @@ var playerName = "PlayerOne"
 var velocity : Vector2 = Vector2.ZERO
 
 func _ready():
+	$ColorRect.color = PongColor
+	
 	initialize_pos()
+	
+#	This should not get reset with the x positions
 	position.y = screen.y / 2
 
 func _physics_process(delta):

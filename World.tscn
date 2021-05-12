@@ -18,11 +18,13 @@ __meta__ = {
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 60, 300 )
 SPEED = 400
+PongColor = Color( 1, 0.298039, 0.298039, 1 )
 
 [node name="Player2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 968, 287 )
 SPEED = 400
 PLAYERONE = false
+PongColor = Color( 0.286275, 0.396078, 1, 1 )
 
 [node name="Ball" parent="." instance=ExtResource( 2 )]
 position = Vector2( 500, 320 )

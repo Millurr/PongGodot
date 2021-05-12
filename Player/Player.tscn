@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 4, 34 )
 
 [node name="Player" type="KinematicBody2D" groups=[
@@ -21,4 +21,4 @@ __meta__ = {
 
 [node name="Collider" type="CollisionShape2D" parent="."]
 position = Vector2( 4, 34 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
